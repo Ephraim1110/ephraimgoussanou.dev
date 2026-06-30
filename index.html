@@ -3,160 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ephraim Goussanou - Ingénieur Génie Industriel</title>
-<meta name="description" content="Portfolio d'Ephraim Goussanou, ingénieur génie industriel : méthodes, amélioration continue, performance et données industrielles.">
+<title>Ephraim Goussanou - Ingénieur Logiciels & Systèmes Industriels</title>
+<meta name="description" content="Portfolio d'Ephraim Goussanou, ingénieur en logiciels et systèmes industriels : développement logiciel, Industrie 4.0, données et interopérabilité.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0a0a0a;
-    --paper:#ffffff;
-    --muted:#6b6b6b;
-    --line:#e4e4e4;
-    --line-strong:#111111;
+    --ink:#0a0a0a;--paper:#ffffff;--muted:#6b6b6b;--line:#e4e4e4;--line-strong:#111111;
     --display:"Space Grotesk",system-ui,sans-serif;
     --body:"Inter",system-ui,sans-serif;
     --mono:"IBM Plex Mono",ui-monospace,monospace;
-    --maxw:1080px;
-    --pad:clamp(20px,5vw,64px);
+    --maxw:1080px;--pad:clamp(20px,5vw,64px);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--body);
-    font-size:17px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    letter-spacing:-0.01em;
-  }
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em}
   a{color:inherit}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted)}
 
-  /* eyebrow / mono labels */
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:12px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--muted);
-  }
-
-  /* top bar */
-  header.bar{
-    border-bottom:1px solid var(--line);
-    position:sticky;top:0;background:var(--paper);z-index:20;
-  }
-  .bar .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
-  .bar .name{font-family:var(--mono);font-size:13px;letter-spacing:0.04em}
-  .bar nav{display:flex;gap:26px}
-  .bar nav a{
-    font-family:var(--mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
-    color:var(--muted);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;
-    transition:color .2s,border-color .2s;
-  }
+  header.bar{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:30}
+  .bar .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;gap:16px}
+  .bar .name{font-family:var(--mono);font-size:13px;letter-spacing:0.04em;white-space:nowrap}
+  .bar-right{display:flex;align-items:center;gap:22px}
+  .bar nav{display:flex;gap:18px;align-items:center}
+  .bar nav a{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
   .bar nav a:hover{color:var(--ink);border-color:var(--ink)}
-  @media(max-width:620px){.bar nav{display:none}}
-
-  /* hero */
-  .hero{padding:clamp(64px,14vh,150px) 0 clamp(56px,9vh,110px)}
-  .hero .index{display:flex;gap:14px;align-items:center;margin-bottom:34px}
-  .hero .index .rule{flex:1;height:1px;background:var(--line)}
-  .hero h1{
-    font-family:var(--display);
-    font-weight:700;
-    font-size:clamp(38px,7.5vw,84px);
-    line-height:0.98;
-    letter-spacing:-0.03em;
-  }
-  .hero .thesis{
-    margin-top:30px;
-    max-width:33ch;
-    font-size:clamp(18px,2.4vw,24px);
-    line-height:1.45;
-    color:var(--ink);
-  }
-  .hero .meta{
-    margin-top:38px;display:flex;flex-wrap:wrap;gap:10px 28px;
-    font-family:var(--mono);font-size:13px;color:var(--muted);
+  .lang{display:flex;align-items:center;gap:5px}
+  .lang button{background:none;border:none;cursor:pointer;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.08em;padding:2px 1px}
+  .lang button.active{color:var(--ink);border-bottom:1px solid var(--ink)}
+  .lang span{color:var(--line-strong);font-size:11px}
+  .menu-btn{display:none;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:none;border:1px solid var(--ink);border-radius:2px;padding:7px 12px;cursor:pointer;color:var(--ink)}
+  @media(max-width:860px){
+    .menu-btn{display:block}
+    .bar nav{position:absolute;top:60px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:0;padding:0 var(--pad);max-height:0;overflow:hidden;transition:max-height .3s ease}
+    .bar nav.open{max-height:560px;padding:12px var(--pad) 22px}
+    .bar nav a{font-size:13px;padding:11px 0;width:100%;border-bottom:1px solid var(--line)}
   }
 
-  /* section frame */
-  section{border-top:1px solid var(--line);padding:clamp(46px,8vh,84px) 0}
-  .sec-head{display:flex;gap:16px;align-items:baseline;margin-bottom:40px}
+  .hero{padding:clamp(60px,12vh,140px) 0 clamp(52px,9vh,104px)}
+  .hero .index{display:flex;gap:14px;align-items:center;margin-bottom:34px;flex-wrap:wrap}
+  .hero .index .rule{flex:1;min-width:30px;height:1px;background:var(--line)}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6.6vw,76px);line-height:1.0;letter-spacing:-0.03em}
+  .hero .thesis{margin-top:30px;max-width:54ch;font-size:clamp(17px,2vw,21px);line-height:1.55;color:var(--ink)}
+  .hero .meta{margin-top:38px;display:flex;flex-wrap:wrap;gap:10px}
+  .hero .meta span{font-family:var(--mono);font-size:12px;letter-spacing:0.04em;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 13px}
+
+  section{border-top:1px solid var(--line);padding:clamp(46px,8vh,82px) 0}
+  .sec-head{display:flex;gap:16px;align-items:baseline;margin-bottom:38px}
   .sec-head .no{font-family:var(--mono);font-size:13px;color:var(--muted)}
   .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,30px);letter-spacing:-0.02em}
 
-  /* about */
-  .about p{max-width:62ch;font-size:clamp(17px,2vw,20px);line-height:1.62}
+  .about p{max-width:64ch;font-size:clamp(17px,2vw,20px);line-height:1.62}
   .about p + p{margin-top:18px}
 
-  /* projects */
-  .project{
-    display:grid;grid-template-columns:200px 1fr;gap:30px;
-    padding:28px var(--pad);margin:0 calc(-1*var(--pad));
-    border-top:1px solid var(--line);
-    transition:background .25s,color .25s;
-  }
+  .xp .row{display:grid;grid-template-columns:200px 1fr;gap:30px;padding:24px var(--pad);margin:0 calc(-1*var(--pad));border-top:1px solid var(--line)}
+  .xp .row:first-of-type{border-top:1px solid var(--line-strong)}
+  .xp .row:last-of-type{border-bottom:1px solid var(--line-strong)}
+  .xp .meta{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.7}
+  .xp .meta .yr{display:block;font-size:15px;color:var(--ink)}
+  .xp h3{font-family:var(--display);font-weight:600;font-size:clamp(18px,2.2vw,22px);letter-spacing:-0.02em;margin-bottom:8px}
+  .xp p{max-width:62ch}
+  @media(max-width:620px){.xp .row{grid-template-columns:1fr;gap:8px}}
+
+  .project{display:grid;grid-template-columns:200px 1fr;gap:30px;padding:28px var(--pad);margin:0 calc(-1*var(--pad));border-top:1px solid var(--line);transition:background .25s,color .25s}
   #work .project:first-of-type{border-top:1px solid var(--line-strong)}
   #work .project:last-of-type{border-bottom:1px solid var(--line-strong)}
   .project:hover{background:var(--ink);color:var(--paper)}
   .project:hover .p-meta,.project:hover .stack li{color:#bdbdbd}
   .project:hover .stack li{border-color:#555}
+  .project:hover .p-body p{color:#e6e6e6}
   .p-meta{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.7}
   .p-meta .yr{color:inherit;display:block;font-size:15px;letter-spacing:0.02em}
   .p-body h3{font-family:var(--display);font-weight:600;font-size:clamp(21px,2.6vw,27px);letter-spacing:-0.02em;margin-bottom:10px}
-  .p-body p{max-width:60ch;color:inherit}
-  .project:hover .p-body p{color:#e6e6e6}
+  .p-body p{max-width:62ch;color:inherit}
   .stack{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-  .stack li{
-    font-family:var(--mono);font-size:11.5px;letter-spacing:0.04em;
-    border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted);
-    transition:border-color .25s,color .25s;
-  }
-  @media(max-width:620px){
-    .project{grid-template-columns:1fr;gap:12px}
-  }
+  .stack li{font-family:var(--mono);font-size:11.5px;letter-spacing:0.04em;border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted);transition:border-color .25s,color .25s}
+  @media(max-width:620px){.project{grid-template-columns:1fr;gap:12px}}
+  .prior{margin-top:26px;font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--muted)}
 
-  /* skills */
-  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 48px}
-  .skill h4{font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-  .skill p{font-size:16px;line-height:1.6}
-  @media(max-width:620px){.skills{grid-template-columns:1fr;gap:26px}}
+  .oss-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+  .oss{padding:24px 0;border-top:1px solid var(--line)}
+  .oss h3{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-0.01em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .oss .badge{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--muted)}
+  .oss p{font-size:15px;color:var(--muted);margin:8px 0 12px;max-width:48ch}
+  .oss a.repo{font-family:var(--mono);font-size:12px;letter-spacing:0.04em;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:padding-left .2s}
+  .oss a.repo:hover{padding-left:6px}
+  @media(max-width:620px){.oss-grid{grid-template-columns:1fr;gap:0}}
 
-  /* education */
-  .edu .row{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:16px 0;border-top:1px solid var(--line)}
-  .edu .row:first-child{border-top:none}
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 44px}
+  .skill h4{font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .skill p{font-size:15px;line-height:1.6}
+  @media(max-width:860px){.skills{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.skills{grid-template-columns:1fr;gap:24px}}
+
+  .edu .row{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line)}
+  .edu .row:first-of-type{border-top:1px solid var(--line-strong)}
+  .edu .row:last-of-type{border-bottom:1px solid var(--line-strong)}
   .edu .yr{font-family:var(--mono);font-size:13px;color:var(--muted)}
-  .edu .deg{font-weight:500}
-  .edu .sch{color:var(--muted);font-size:15px}
+  .edu .deg{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-0.01em}
+  .edu .sch{color:var(--muted);font-size:15px;margin-top:3px}
   @media(max-width:620px){.edu .row{grid-template-columns:1fr;gap:4px}}
 
-  /* contact */
   #contact{border-bottom:1px solid var(--line)}
-  .contact-grid{display:flex;flex-direction:column;gap:2px}
-  .contact-grid a{
-    display:flex;justify-content:space-between;align-items:baseline;gap:20px;
-    padding:20px 0;border-top:1px solid var(--line);text-decoration:none;
-    font-family:var(--display);font-weight:500;font-size:clamp(20px,3.4vw,34px);letter-spacing:-0.02em;
-    transition:padding-left .25s;
-  }
+  .contact-grid{display:flex;flex-direction:column;gap:0}
+  .contact-grid a{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0;border-top:1px solid var(--line);text-decoration:none;font-family:var(--display);font-weight:500;font-size:clamp(19px,3.2vw,32px);letter-spacing:-0.02em;transition:padding-left .25s}
   .contact-grid a:first-child{border-top:1px solid var(--line-strong)}
   .contact-grid a:last-child{border-bottom:1px solid var(--line-strong)}
   .contact-grid a:hover{padding-left:16px}
   .contact-grid a .tag{font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 
-  footer{padding:30px 0 50px;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer{padding:30px 0 50px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
 
-  /* reveal -only hides when JS is active, so content is always visible as a fallback */
   .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
   .js .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){
-    .js .reveal{opacity:1;transform:none;transition:none}
-    html{scroll-behavior:auto}
-  }
+  @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
   :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 </style>
 </head>
@@ -165,12 +128,22 @@
 <header class="bar">
   <div class="wrap">
     <span class="name">EPHRAIM GOUSSANOU</span>
-    <nav>
-      <a href="#about">Profil</a>
-      <a href="#work">Projets</a>
-      <a href="#skills">Compétences</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="bar-right">
+      <div class="lang" aria-label="Langue / Language">
+        <button data-lang="fr" class="active">FR</button><span>/</span><button data-lang="en">EN</button>
+      </div>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav">
+        <a href="#top" data-en="Home">Accueil</a>
+        <a href="#about" data-en="About">À propos</a>
+        <a href="#xp" data-en="Experience">Expériences</a>
+        <a href="#work" data-en="Projects">Projets</a>
+        <a href="#oss" data-en="Open Source">Open Source</a>
+        <a href="#skills" data-en="Skills">Compétences</a>
+        <a href="#edu" data-en="Education">Formation</a>
+        <a href="#contact" data-en="Contact">Contact</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -178,125 +151,263 @@
   <section class="hero" id="top">
     <div class="wrap">
       <div class="index">
-        <span class="eyebrow">Ingénieur génie industriel</span>
+        <span class="eyebrow" data-en="Engineer • Software &amp; Industrial Systems">Ingénieur • Logiciels &amp; Systèmes Industriels</span>
         <span class="rule"></span>
-        <span class="eyebrow">Amiens · Mobile en France</span>
       </div>
-      <h1>Méthodes,<br>performance<br>&amp; données.</h1>
-      <p class="thesis">Je conçois les outils et les méthodes qui rendent la production plus fiable, et la donnée industrielle plus lisible.</p>
+      <h1 data-en="Building digital<br>solutions for<br>industry.">Concevoir des solutions<br>numériques pour<br>l'industrie.</h1>
+      <p class="thesis" data-en="I help companies improve their industrial systems through software development, data and Industry 4.0. My goal is to turn business needs into concrete, reliable and easy-to-use solutions.">J'aide les entreprises à améliorer leurs systèmes industriels grâce au développement logiciel, à la donnée et à l'Industrie 4.0. Mon objectif est de transformer des besoins métiers en solutions concrètes, fiables et faciles à utiliser.</p>
       <div class="meta">
-        <span>Amélioration continue</span>
-        <span>Pilotage de la performance</span>
-        <span>Industrie 4.0</span>
+        <span data-en="Software development">Développement logiciel</span>
+        <span data-en="Industry 4.0">Industrie 4.0</span>
+        <span data-en="Interoperability">Interopérabilité</span>
+         <span data-en="Automation">Automatisation</span>
+          <span data-en="Robotics">Robotique</span>
+        <span>IoT</span>
       </div>
     </div>
   </section>
 
-  <section class="about reveal" id="about">
+  <section class="about" id="about">
     <div class="wrap">
-      <div class="sec-head"><span class="no">01</span><h2>Profil</h2></div>
-      <p>Ingénieur Génie Industriel (Bac+5), formé à l'UPJV. Je travaille à l'intersection des méthodes, de l'amélioration continue et de la donnée : optimiser des procédés, mesurer la performance et transformer des indicateurs en décisions concrètes.</p>
-      <p>Mon parcours allie développement logiciel et optimisation industrielle. Je suis à l'aise pour conduire un projet de bout en bout, coordonner les acteurs internes et externes, et bâtir les tableaux de bord qui rendent un système plus simple à piloter.</p>
+      <div class="sec-head reveal"><span class="no">01</span><h2 data-en="About">À propos</h2></div>
+      <div class="reveal">
+        <p data-en="A graduate engineer in Industrial Engineering, I build software solutions to improve the performance of industrial systems. My experience spans application development, integration of connected systems, industrial data processing and the design of architectures based on standards such as MQTT, NGSI-LD and the Web of Things.">Ingénieur diplômé en Génie Industriel, je développe des solutions logicielles destinées à améliorer la performance des systèmes industriels. Mon expérience couvre le développement d'applications, l'intégration de systèmes connectés, l'exploitation de données industrielles et la conception d'architectures basées sur des standards tels que MQTT, NGSI-LD et le Web of Things.</p>
+        <p data-en="I especially enjoy projects that combine software development, innovation and continuous improvement, where digital tools deliver concrete results in the field.">J'apprécie particulièrement les projets mêlant développement logiciel, innovation et amélioration continue, où les outils numériques permettent d'apporter des résultats concrets sur le terrain.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="xp" id="xp">
+    <div class="wrap"><div class="sec-head reveal"><span class="no">02</span><h2 data-en="Experience">Expériences</h2></div></div>
+    <div class="wrap">
+      <div class="row reveal">
+        <div class="meta"><span class="yr">2024 - 2026</span>Faubourg Numérique<br>Saint-Quentin (02)</div>
+        <div>
+          <h3 data-en="R&amp;D Engineer - Apprenticeship">Alternant Ingénieur R&amp;D</h3>
+          <p data-en="Designing software and interoperability solutions (FIWARE/NGSI-LD, Web of Things, MQTT) within a Digital Innovation Hub, across smart-territory, agriculture and Industry 4.0 projects. Internship from April to August 2024, then apprenticeship.">Conception de solutions logicielles et d'interopérabilité (FIWARE/NGSI-LD, Web of Things, MQTT) au sein d'un Digital Innovation Hub, sur des projets territoires, agriculture et Industrie 4.0. Stage d'avril à août 2024, puis alternance.</p>
+        </div>
+      </div>
+      <div class="row reveal">
+        <div class="meta"><span class="yr">2023</span>MGNH<br>Saint-Quentin (02)</div>
+        <div>
+          <h3 data-en="Web Developer">Développeur Web</h3>
+          <p data-en="Built a responsive e-commerce site with SEO optimisation; structured and managed the product database.">Développement d'un site e-commerce responsive avec optimisation SEO ; structuration et gestion de la base de données produits.</p>
+        </div>
+      </div>
+      <div class="row reveal">
+        <div class="meta"><span class="yr">2021</span>Global Sourcing Network<br>Paris (75)</div>
+        <div>
+          <h3 data-en="Developer Analyst">Analyste Développeur</h3>
+          <p data-en="Built a PrestaShop e-commerce store with integrated payment; configured and structured product data.">Création d'une boutique e-commerce (PrestaShop) avec paiement intégré ; paramétrage et structuration des données produits.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="work">
+    <div class="wrap"><div class="sec-head reveal"><span class="no">03</span><h2 data-en="Selected projects">Projets sélectionnés</h2></div></div>
     <div class="wrap">
-      <div class="sec-head reveal"><span class="no">02</span><h2>Projets sélectionnés</h2></div>
+
+      <article class="project reveal">
+        <div class="p-meta"><span class="yr">2024 - 2026</span><span data-en="Proxinnov<br>France 2030 laureate">Proxinnov<br>Lauréat France 2030</span></div>
+        <div class="p-body">
+          <h3>LP4.0 - Ligne pilote industrielle 4.0</h3>
+          <p data-en="A flexible, open-source robotic line for dismantling batteries and equipment. I led interoperability: modelling an autonomous mobile robot in Web of Things, setting up an MQTT broker, and a Node.js agent that decodes industrial sensors (IO-Link) and feeds the digital twin in real time via NGSI-LD. PoC of a containerised Unified Namespace (ISA-95).">Ligne robotisée flexible et open source pour le démantèlement de batteries et d'équipements. J'ai pris en charge l'interopérabilité : modélisation d'un robot mobile autonome en Web of Things, mise en place d'un broker MQTT, et un agent Node.js qui décode les capteurs industriels (IO-Link) et alimente le jumeau numérique en temps réel via NGSI-LD. PoC d'un Unified Namespace (ISA-95) conteneurisé.</p>
+          <ul class="stack"><li>Web of Things</li><li>NGSI-LD / FIWARE</li><li>MQTT</li><li>Node.js / TypeScript</li><li>Node-RED</li><li>Docker</li></ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="p-meta"><span class="yr">2024 - 2025</span>Somme Numérique</div>
+        <div class="p-body">
+          <h3>TCD - Territoire Connecté et Durable</h3>
+          <p data-en="Open-source platform to manage a territory's connected infrastructure: public lighting, waste, watercourses, buildings. Vue.js frontend and Node.js/Express backend, interoperability through an NGSI-LD API and a Web of Things server, with real-time dashboards to monitor equipment.">Plateforme open source de gestion des infrastructures connectées d'un territoire : éclairage public, déchets, cours d'eau, bâtiments. Frontend Vue.js et backend Node.js/Express, interopérabilité via une API NGSI-LD et un serveur Web of Things, et tableaux de bord temps réel pour le suivi des équipements.</p>
+          <ul class="stack"><li>Vue.js</li><li>Node.js / Express</li><li>NGSI-LD</li><li>Web of Things</li><li>Grafana</li><li>Keyrock</li></ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="p-meta"><span class="yr">2025</span><span data-en="UN Citiverse Challenge<br>Top 5 - Team LEC">UN Citiverse Challenge<br>Top 5 - Team LEC</span></div>
+        <div class="p-body">
+          <h3 data-en="E-LEC - Digital twins for the city">E-LEC - Jumeaux numériques pour la ville</h3>
+          <p data-en="A digital-twin solution to model, simulate and optimise the management of urban infrastructure from real-time data. Project selected in the Top 5 of the UN Citiverse Challenge 2025.">Solution de jumeaux numériques pour modéliser, simuler et optimiser la gestion d'infrastructures urbaines à partir de données temps réel. Projet sélectionné dans le Top 5 du UN Citiverse Challenge 2025.</p>
+          <ul class="stack"><li data-en="Digital twins">Jumeaux numériques</li><li>Vue.js</li><li>Node.js</li><li>NGSI-LD</li><li>Web of Things</li></ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="p-meta"><span class="yr">2024 - 2026</span>Gaya Consultant</div>
+        <div class="p-body">
+          <h3 data-en="Agricible - farm management platform">Agricible - plateforme de gestion agricole</h3>
+          <p data-en="Farm management platform. Designed the PostgreSQL database (relations, procedures, triggers) then finalised the backend: automatic import of PAC declarations, geographic reprojection (Lambert 93) and business filtering of crops so the platform runs on real data.">Plateforme de gestion d'exploitations agricoles. Conception de la base PostgreSQL (relations, procédures, déclencheurs) puis finalisation du backend : import automatique des déclarations PAC, reprojection géographique (Lambert 93) et filtrage métier des cultures pour faire tourner la plateforme avec de vraies données.</p>
+          <ul class="stack"><li>PostgreSQL / SQL</li><li>Node.js / Express</li><li>API REST</li><li>Vue.js</li><li>proj4</li></ul>
+        </div>
+      </article>
+
     </div>
     <div class="wrap">
+      <p class="prior reveal" data-en="Before the apprenticeship: web and e-commerce development (PrestaShop, SEO, databases) at MGNH and Global Sourcing Network.">Avant l'alternance : développement web et e-commerce (PrestaShop, optimisation SEO, bases de données) chez MGNH et Global Sourcing Network.</p>
+    </div>
+  </section>
 
-      <article class="project reveal">
-        <div class="p-meta"><span class="yr">2024 - 2025</span>Faubourg Numérique<br>pour Gaya Consultants / Bonduelle</div>
-        <div class="p-body">
-          <h3>Agricible - indicateurs agroécologiques</h3>
-          <p>Application d'indicateurs agroécologiques et carbone destinée aux exploitants agricoles. Analyse des besoins, développement et intégration, en coordination directe avec le client.</p>
-          <ul class="stack"><li>Node.js</li><li>API REST</li><li>JSON</li><li>Node-RED</li><li>Analyse de besoins</li></ul>
+  <section id="oss">
+    <div class="wrap"><div class="sec-head reveal"><span class="no">04</span><h2>Open Source</h2></div></div>
+    <div class="wrap">
+      <div class="oss-grid">
+        <div class="oss reveal">
+          <h3>KPI Dashboard Calculator</h3>
+          <p data-en="Tool to compute and visualise key performance indicators (KPIs).">Outil de calcul et de visualisation d'indicateurs de performance (KPI).</p>
+          <a class="repo" data-gh="kpi-dashboard-calculator" data-en="View on GitHub →" href="#">Voir sur GitHub →</a>
         </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="p-meta"><span class="yr">2024 -présent</span>Faubourg Numérique</div>
-        <div class="p-body">
-          <h3>Pilotage de la performance</h3>
-          <p>Conception et déploiement de tableaux de bord et d'outils de reporting pour le suivi de KPI de performance, de la collecte des données à la restitution.</p>
-          <ul class="stack"><li>Power BI</li><li>Excel</li><li>SQL</li><li>KPI</li></ul>
+        <div class="oss reveal">
+          <h3>NGSI-LD MQTT Agent</h3>
+          <p data-en="Gateway agent that decodes MQTT messages and syncs them into an NGSI-LD Context Broker.">Agent passerelle qui décode des messages MQTT et les synchronise dans un Context Broker NGSI-LD.</p>
+          <a class="repo" data-gh="ngsi-ld-mqtt-agent" data-en="View on GitHub →" href="#">Voir sur GitHub →</a>
         </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="p-meta"><span class="yr">2023</span>MGNH</div>
-        <div class="p-body">
-          <h3>Plateforme e-commerce</h3>
-          <p>Développement d'un site e-commerce responsive avec optimisation SEO, et structuration de la base de données produits.</p>
-          <ul class="stack"><li>Full-stack</li><li>SEO</li><li>Base de données</li></ul>
+        <div class="oss reveal">
+          <h3>mcp-sqlite</h3>
+          <p data-en="MCP server to query and manage a SQLite database through an assistant.">Serveur MCP pour interroger et manipuler une base SQLite via un assistant.</p>
+          <a class="repo" data-gh="mcp-sqlite" data-en="View on GitHub →" href="#">Voir sur GitHub →</a>
         </div>
-      </article>
-
-      <article class="project reveal">
-        <div class="p-meta"><span class="yr">2021</span>Global Sourcing Network · Paris</div>
-        <div class="p-body">
-          <h3>Boutique e-commerce</h3>
-          <p>Création d'une boutique PrestaShop avec système de paiement intégré ; paramétrage et structuration des données produits dans le back-office.</p>
-          <ul class="stack"><li>PrestaShop</li><li>Back-office</li><li>Paiement</li></ul>
+        <div class="oss reveal">
+          <h3>MusicToShorts <span class="badge" data-en="In progress">En développement</span></h3>
+          <p data-en="Automatic generation of short-form content from music.">Génération automatique de formats courts à partir de contenus musicaux.</p>
+          <a class="repo" data-gh="music-to-shorts" data-en="View on GitHub →" href="#">Voir sur GitHub →</a>
         </div>
-      </article>
-
+        <div class="oss reveal">
+          <h3 data-en="Personal portfolio">Portfolio personnel</h3>
+          <p data-en="This site, built with HTML, CSS and JavaScript, with no external dependency.">Ce site, construit en HTML, CSS et JavaScript, sans dépendance externe.</p>
+          <a class="repo" data-gh="portfolio" data-en="View on GitHub →" href="#">Voir sur GitHub →</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="skills">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="no">03</span><h2>Compétences</h2></div>
+      <div class="sec-head reveal"><span class="no">05</span><h2 data-en="Skills">Compétences</h2></div>
       <div class="skills">
-        <div class="skill reveal"><h4>Méthodes &amp; performance</h4><p>Amélioration continue, KPI &amp; TRS, optimisation de procédés, conduite de projet, coordination des acteurs (QCD).</p></div>
-        <div class="skill reveal"><h4>Données &amp; reporting</h4><p>Traitement et analyse de données, tableaux de bord et indicateurs de pilotage (Power BI, Excel), SQL (PostgreSQL, MySQL).</p></div>
-        <div class="skill reveal"><h4>Systèmes industriels</h4><p>ERP, GPAO, MES, intégration de systèmes et flux de données industrielles (API REST, JSON, Node-RED).</p></div>
-        <div class="skill reveal"><h4>Développement</h4><p>Node.js, PHP, Java, automatisation de processus, documentation et versionnage (Git/GitHub).</p></div>
+        <div class="skill reveal"><h4 data-en="Software development">Développement logiciel</h4><p data-en="Vue.js, Node.js / Express, TypeScript, REST API design.">Vue.js, Node.js / Express, TypeScript, conception d'API REST.</p></div>
+        <div class="skill reveal"><h4 data-en="Interoperability &amp; IoT">Interopérabilité &amp; IoT</h4><p data-en="NGSI-LD / FIWARE (Context Broker), Web of Things, MQTT, Node-RED, digital twins.">NGSI-LD / FIWARE (Context Broker), Web of Things, MQTT, Node-RED, jumeaux numériques.</p></div>
+        <div class="skill reveal"><h4 data-en="Data">Données</h4><p data-en="PostgreSQL &amp; SQL (procedures, triggers), data processing, dashboards (Grafana, Power BI).">PostgreSQL &amp; SQL (procédures, déclencheurs), traitement de données, tableaux de bord (Grafana, Power BI).</p></div>
+        <div class="skill reveal"><h4 data-en="Industry 4.0">Industrie 4.0</h4><p data-en="Industrial sensors (IO-Link), Unified Namespace (ISA-95), automation, continuous improvement.">Capteurs industriels (IO-Link), Unified Namespace (ISA-95), automatisation, amélioration continue.</p></div>
+        <div class="skill reveal"><h4 data-en="Methods &amp; collaboration">Méthodes &amp; collaboration</h4><p data-en="Project management, working with existing codebases, technical documentation, partner coordination.">Conduite de projet, reprise de l'existant, documentation technique, coordination de partenaires.</p></div>
+        <div class="skill reveal"><h4 data-en="Tools">Outils</h4><p data-en="Git / GitHub, Docker, Trello, test and simulation environments.">Git / GitHub, Docker, Trello, environnements de test et de simulation.</p></div>
       </div>
     </div>
   </section>
 
   <section class="edu" id="edu">
+    <div class="wrap"><div class="sec-head reveal"><span class="no">06</span><h2 data-en="Education">Formation</h2></div></div>
     <div class="wrap">
-      <div class="sec-head reveal"><span class="no">04</span><h2>Formation</h2></div>
       <div class="reveal">
-        <div class="row"><span class="yr">2024 -2026</span><div><div class="deg">Master Génie Industriel (Bac+5)</div><div class="sch">UPJV -Amiens · Systèmes industriels, ERP, automatisation, performance</div></div></div>
-        <div class="row"><span class="yr">2023 -2024</span><div><div class="deg">Licence Pro -Conception &amp; Développement Web et Mobile</div><div class="sch">INSSET-UPJV -Saint-Quentin</div></div></div>
-        <div class="row"><span class="yr">2021 -2023</span><div><div class="deg">Licence Sciences et Technologies</div><div class="sch">INSSET-UPJV</div></div></div>
-        <div class="row"><span class="yr">2019 -2021</span><div><div class="deg">BTS SIO -option SLAM</div><div class="sch">Institut F2i</div></div></div>
+        <div class="row">
+          <span class="yr">2024 - 2026</span>
+          <div>
+            <div class="deg" data-en="Master's in Industrial Engineering (Bac+5)">Master Génie Industriel (Bac+5)</div>
+            <div class="sch" data-en="UPJV - Amiens · Industrial systems, ERP, automation and performance management">UPJV - Amiens · Systèmes industriels, ERP, automatisation et gestion de la performance</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="yr">2023 - 2024</span>
+          <div>
+            <div class="deg" data-en="Professional Bachelor - Web &amp; Mobile Design and Development">Licence Professionnelle - Conception &amp; Développement Web et Mobile</div>
+            <div class="sch">INSSET-UPJV - Saint-Quentin</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="yr">2021 - 2023</span>
+          <div>
+            <div class="deg" data-en="Bachelor in Science and Technology">Licence Sciences et Technologies</div>
+            <div class="sch">INSSET-UPJV</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="yr">2019 - 2021</span>
+          <div>
+            <div class="deg" data-en="BTS SIO - SLAM track">BTS SIO - option SLAM</div>
+            <div class="sch">Institut F2i</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="no">05</span><h2>Contact</h2></div>
+      <div class="sec-head reveal"><span class="no">07</span><h2>Contact</h2></div>
       <div class="contact-grid reveal">
         <a href="mailto:ephraimgoussanou0@gmail.com"><span>ephraimgoussanou0@gmail.com</span><span class="tag">Email</span></a>
-        <a href="tel:+33628433629"><span>06 28 43 36 29</span><span class="tag">Téléphone</span></a>
+        <a href="tel:+33628433629"><span>06 28 43 36 29</span><span class="tag" data-en="Phone">Téléphone</span></a>
         <a href="https://www.linkedin.com/in/sena-ephraim" target="_blank" rel="noopener"><span>linkedin.com/in/sena-ephraim</span><span class="tag">LinkedIn</span></a>
+        <a data-gh="" href="#"><span class="gh-label">github.com/Ephraim1110</span><span class="tag">GitHub</span></a>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;width:100%">
+  <div class="wrap">
     <span>© 2026 Ephraim Goussanou</span>
-    <span>Génie industriel · Méthodes · Données</span>
+    <span data-en="Software · Industrial systems · Data">Logiciels · Systèmes industriels · Données</span>
   </div>
 </footer>
 
 <script>
   document.documentElement.classList.add('js');
-  window.addEventListener('DOMContentLoaded',function(){
-    var els=document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(el){io.observe(el)});
+
+  /* ---- GitHub : remplace USERNAME par ton identifiant GitHub ---- */
+  var GITHUB_USER = "Ephraim1110";
+  var base = "https://github.com/" + GITHUB_USER;
+  document.querySelectorAll('[data-gh]').forEach(function(a){
+    var repo = a.getAttribute('data-gh');
+    a.href = repo ? (base + "/" + repo) : base;
+    a.target = "_blank"; a.rel = "noopener";
+    var lbl = a.querySelector('.gh-label');
+    if(lbl) lbl.textContent = "github.com/" + GITHUB_USER;
+  });
+
+  /* ---- internationalisation FR / EN ---- */
+  function setLang(l){
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(el.dataset.fr === undefined) el.dataset.fr = el.innerHTML;
+      el.innerHTML = (l === 'en') ? el.dataset.en : el.dataset.fr;
+    });
+    document.querySelectorAll('.lang button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === l);
+    });
+    try{ localStorage.setItem('lang', l); }catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+  });
+  var saved = 'fr';
+  try{ saved = localStorage.getItem('lang') || (navigator.language||'fr').slice(0,2); }catch(e){}
+  setLang(saved === 'en' ? 'en' : 'fr');
+
+  /* ---- menu mobile ---- */
+  var btn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('nav');
+  if(btn){
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.textContent = open ? (document.documentElement.lang==='en'?'Close':'Fermer') : 'Menu';
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('open'); btn.textContent='Menu'; btn.setAttribute('aria-expanded',false); });
+    });
+  }
+
+ 
+  window.addEventListener('DOMContentLoaded', function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
   });
 </script>
 </body>
