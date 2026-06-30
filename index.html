@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ephraim Goussanou - Ingénieur Génie Industriel</title>
+<meta name="description" content="Portfolio d'Ephraim Goussanou, ingénieur génie industriel : méthodes, amélioration continue, performance et données industrielles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;
+    --paper:#ffffff;
+    --muted:#6b6b6b;
+    --line:#e4e4e4;
+    --line-strong:#111111;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --maxw:1080px;
+    --pad:clamp(20px,5vw,64px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+
+  /* eyebrow / mono labels */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* top bar */
+  header.bar{
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;background:var(--paper);z-index:20;
+  }
+  .bar .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .bar .name{font-family:var(--mono);font-size:13px;letter-spacing:0.04em}
+  .bar nav{display:flex;gap:26px}
+  .bar nav a{
+    font-family:var(--mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--muted);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;
+    transition:color .2s,border-color .2s;
+  }
+  .bar nav a:hover{color:var(--ink);border-color:var(--ink)}
+  @media(max-width:620px){.bar nav{display:none}}
+
+  /* hero */
+  .hero{padding:clamp(64px,14vh,150px) 0 clamp(56px,9vh,110px)}
+  .hero .index{display:flex;gap:14px;align-items:center;margin-bottom:34px}
+  .hero .index .rule{flex:1;height:1px;background:var(--line)}
+  .hero h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(38px,7.5vw,84px);
+    line-height:0.98;
+    letter-spacing:-0.03em;
+  }
+  .hero .thesis{
+    margin-top:30px;
+    max-width:33ch;
+    font-size:clamp(18px,2.4vw,24px);
+    line-height:1.45;
+    color:var(--ink);
+  }
+  .hero .meta{
+    margin-top:38px;display:flex;flex-wrap:wrap;gap:10px 28px;
+    font-family:var(--mono);font-size:13px;color:var(--muted);
+  }
+
+  /* section frame */
+  section{border-top:1px solid var(--line);padding:clamp(46px,8vh,84px) 0}
+  .sec-head{display:flex;gap:16px;align-items:baseline;margin-bottom:40px}
+  .sec-head .no{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,30px);letter-spacing:-0.02em}
+
+  /* about */
+  .about p{max-width:62ch;font-size:clamp(17px,2vw,20px);line-height:1.62}
+  .about p + p{margin-top:18px}
+
+  /* projects */
+  .project{
+    display:grid;grid-template-columns:200px 1fr;gap:30px;
+    padding:28px var(--pad);margin:0 calc(-1*var(--pad));
+    border-top:1px solid var(--line);
+    transition:background .25s,color .25s;
+  }
+  #work .project:first-of-type{border-top:1px solid var(--line-strong)}
+  #work .project:last-of-type{border-bottom:1px solid var(--line-strong)}
+  .project:hover{background:var(--ink);color:var(--paper)}
+  .project:hover .p-meta,.project:hover .stack li{color:#bdbdbd}
+  .project:hover .stack li{border-color:#555}
+  .p-meta{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.7}
+  .p-meta .yr{color:inherit;display:block;font-size:15px;letter-spacing:0.02em}
+  .p-body h3{font-family:var(--display);font-weight:600;font-size:clamp(21px,2.6vw,27px);letter-spacing:-0.02em;margin-bottom:10px}
+  .p-body p{max-width:60ch;color:inherit}
+  .project:hover .p-body p{color:#e6e6e6}
+  .stack{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .stack li{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:0.04em;
+    border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted);
+    transition:border-color .25s,color .25s;
+  }
+  @media(max-width:620px){
+    .project{grid-template-columns:1fr;gap:12px}
+  }
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 48px}
+  .skill h4{font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .skill p{font-size:16px;line-height:1.6}
+  @media(max-width:620px){.skills{grid-template-columns:1fr;gap:26px}}
+
+  /* education */
+  .edu .row{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:16px 0;border-top:1px solid var(--line)}
+  .edu .row:first-child{border-top:none}
+  .edu .yr{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .edu .deg{font-weight:500}
+  .edu .sch{color:var(--muted);font-size:15px}
+  @media(max-width:620px){.edu .row{grid-template-columns:1fr;gap:4px}}
+
+  /* contact */
+  #contact{border-bottom:1px solid var(--line)}
+  .contact-grid{display:flex;flex-direction:column;gap:2px}
+  .contact-grid a{
+    display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+    padding:20px 0;border-top:1px solid var(--line);text-decoration:none;
+    font-family:var(--display);font-weight:500;font-size:clamp(20px,3.4vw,34px);letter-spacing:-0.02em;
+    transition:padding-left .25s;
+  }
+  .contact-grid a:first-child{border-top:1px solid var(--line-strong)}
+  .contact-grid a:last-child{border-bottom:1px solid var(--line-strong)}
+  .contact-grid a:hover{padding-left:16px}
+  .contact-grid a .tag{font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+  footer{padding:30px 0 50px;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* reveal -only hides when JS is active, so content is always visible as a fallback */
+  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .js .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+  :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <span class="name">EPHRAIM GOUSSANOU</span>
+    <nav>
+      <a href="#about">Profil</a>
+      <a href="#work">Projets</a>
+      <a href="#skills">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="index">
+        <span class="eyebrow">Ingénieur génie industriel</span>
+        <span class="rule"></span>
+        <span class="eyebrow">Amiens · Mobile en France</span>
+      </div>
+      <h1>Méthodes,<br>performance<br>&amp; données.</h1>
+      <p class="thesis">Je conçois les outils et les méthodes qui rendent la production plus fiable, et la donnée industrielle plus lisible.</p>
+      <div class="meta">
+        <span>Amélioration continue</span>
+        <span>Pilotage de la performance</span>
+        <span>Industrie 4.0</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about reveal" id="about">
+    <div class="wrap">
+      <div class="sec-head"><span class="no">01</span><h2>Profil</h2></div>
+      <p>Ingénieur Génie Industriel (Bac+5), formé à l'UPJV. Je travaille à l'intersection des méthodes, de l'amélioration continue et de la donnée : optimiser des procédés, mesurer la performance et transformer des indicateurs en décisions concrètes.</p>
+      <p>Mon parcours allie développement logiciel et optimisation industrielle. Je suis à l'aise pour conduire un projet de bout en bout, coordonner les acteurs internes et externes, et bâtir les tableaux de bord qui rendent un système plus simple à piloter.</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="no">02</span><h2>Projets sélectionnés</h2></div>
+    </div>
+    <div class="wrap">
+
+      <article class="project reveal">
+        <div class="p-meta"><span class="yr">2024 - 2025</span>Faubourg Numérique<br>pour Gaya Consultants / Bonduelle</div>
+        <div class="p-body">
+          <h3>Agricible - indicateurs agroécologiques</h3>
+          <p>Application d'indicateurs agroécologiques et carbone destinée aux exploitants agricoles. Analyse des besoins, développement et intégration, en coordination directe avec le client.</p>
+          <ul class="stack"><li>Node.js</li><li>API REST</li><li>JSON</li><li>Node-RED</li><li>Analyse de besoins</li></ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="p-meta"><span class="yr">2024 -présent</span>Faubourg Numérique</div>
+        <div class="p-body">
+          <h3>Pilotage de la performance</h3>
+          <p>Conception et déploiement de tableaux de bord et d'outils de reporting pour le suivi de KPI de performance, de la collecte des données à la restitution.</p>
+          <ul class="stack"><li>Power BI</li><li>Excel</li><li>SQL</li><li>KPI</li></ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="p-meta"><span class="yr">2023</span>MGNH</div>
+        <div class="p-body">
+          <h3>Plateforme e-commerce</h3>
+          <p>Développement d'un site e-commerce responsive avec optimisation SEO, et structuration de la base de données produits.</p>
+          <ul class="stack"><li>Full-stack</li><li>SEO</li><li>Base de données</li></ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="p-meta"><span class="yr">2021</span>Global Sourcing Network · Paris</div>
+        <div class="p-body">
+          <h3>Boutique e-commerce</h3>
+          <p>Création d'une boutique PrestaShop avec système de paiement intégré ; paramétrage et structuration des données produits dans le back-office.</p>
+          <ul class="stack"><li>PrestaShop</li><li>Back-office</li><li>Paiement</li></ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="no">03</span><h2>Compétences</h2></div>
+      <div class="skills">
+        <div class="skill reveal"><h4>Méthodes &amp; performance</h4><p>Amélioration continue, KPI &amp; TRS, optimisation de procédés, conduite de projet, coordination des acteurs (QCD).</p></div>
+        <div class="skill reveal"><h4>Données &amp; reporting</h4><p>Traitement et analyse de données, tableaux de bord et indicateurs de pilotage (Power BI, Excel), SQL (PostgreSQL, MySQL).</p></div>
+        <div class="skill reveal"><h4>Systèmes industriels</h4><p>ERP, GPAO, MES, intégration de systèmes et flux de données industrielles (API REST, JSON, Node-RED).</p></div>
+        <div class="skill reveal"><h4>Développement</h4><p>Node.js, PHP, Java, automatisation de processus, documentation et versionnage (Git/GitHub).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="edu" id="edu">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="no">04</span><h2>Formation</h2></div>
+      <div class="reveal">
+        <div class="row"><span class="yr">2024 -2026</span><div><div class="deg">Master Génie Industriel (Bac+5)</div><div class="sch">UPJV -Amiens · Systèmes industriels, ERP, automatisation, performance</div></div></div>
+        <div class="row"><span class="yr">2023 -2024</span><div><div class="deg">Licence Pro -Conception &amp; Développement Web et Mobile</div><div class="sch">INSSET-UPJV -Saint-Quentin</div></div></div>
+        <div class="row"><span class="yr">2021 -2023</span><div><div class="deg">Licence Sciences et Technologies</div><div class="sch">INSSET-UPJV</div></div></div>
+        <div class="row"><span class="yr">2019 -2021</span><div><div class="deg">BTS SIO -option SLAM</div><div class="sch">Institut F2i</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="no">05</span><h2>Contact</h2></div>
+      <div class="contact-grid reveal">
+        <a href="mailto:ephraimgoussanou0@gmail.com"><span>ephraimgoussanou0@gmail.com</span><span class="tag">Email</span></a>
+        <a href="tel:+33628433629"><span>06 28 43 36 29</span><span class="tag">Téléphone</span></a>
+        <a href="https://www.linkedin.com/in/sena-ephraim" target="_blank" rel="noopener"><span>linkedin.com/in/sena-ephraim</span><span class="tag">LinkedIn</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;width:100%">
+    <span>© 2026 Ephraim Goussanou</span>
+    <span>Génie industriel · Méthodes · Données</span>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  window.addEventListener('DOMContentLoaded',function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  });
+</script>
+</body>
+</html>
