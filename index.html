@@ -30,6 +30,13 @@
   .bar nav{display:flex;gap:18px;align-items:center}
   .bar nav a{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
   .bar nav a:hover{color:var(--ink);border-color:var(--ink)}
+  .factory-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;padding:7px 13px;white-space:nowrap;transition:background .2s,color .2s}
+  .factory-link:hover{background:var(--ink);color:var(--paper)}
+  .factory-link .dot{width:6px;height:6px;border-radius:50%;background:#39d7ff;box-shadow:0 0 7px #39d7ff;animation:fpulse 1.6s ease-in-out infinite}
+  .factory-link:hover .dot{background:#39d7ff}
+  @keyframes fpulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .factory-link-mobile{display:none}
+  @media(max-width:860px){.factory-link{display:none}.factory-link-mobile{display:block;color:var(--ink);font-weight:600}}
   .lang{display:flex;align-items:center;gap:5px}
   .lang button{background:none;border:none;cursor:pointer;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.08em;padding:2px 1px}
   .lang button.active{color:var(--ink);border-bottom:1px solid var(--ink)}
@@ -129,11 +136,15 @@
   <div class="wrap">
     <span class="name">EPHRAIM GOUSSANOU</span>
     <div class="bar-right">
+      <a class="factory-link" href="factory/index.html" data-en="3D Experience">
+        <span class="dot"></span>Expérience 3D
+      </a>
       <div class="lang" aria-label="Langue / Language">
         <button data-lang="fr" class="active">FR</button><span>/</span><button data-lang="en">EN</button>
       </div>
       <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav id="nav">
+        <a class="factory-link-mobile" href="factory/index.html" data-en="↗ 3D Experience">↗ Expérience 3D</a>
         <a href="#top" data-en="Home">Accueil</a>
         <a href="#about" data-en="About">À propos</a>
         <a href="#xp" data-en="Experience">Expériences</a>

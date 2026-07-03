@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Ephraim Goussanou — Smart Factory 4.0</title>
+<meta name="description" content="Portfolio immersif d'Ephraim Goussanou : une Smart Factory Industrie 4.0 en 3D (Three.js). Robotique, automatisme, MQTT / Unified Namespace, data, IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<!-- GSAP (UMD global) pour les animations cinématiques -->
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+</head>
+<body>
+
+
+<canvas id="scene"></canvas>
+
+
+<div id="loader" class="loader">
+  <div class="loader__inner">
+    <div class="loader__brand">
+      <span class="loader__eyebrow">EPHRAIM GOUSSANOU</span>
+      <h1 class="loader__title">SMART&nbsp;FACTORY<span>4.0</span></h1>
+      <p class="loader__sub" data-en="An immersive Industry 4.0 portfolio. Robotics, automation, MQTT / Unified Namespace, data &amp; AI.">Un portfolio immersif Industrie 4.0. Robotique, automatisme, MQTT / Unified Namespace, data &amp; IA.</p>
+    </div>
+    <div class="loader__bar"><span id="loaderFill" class="loader__fill"></span></div>
+    <div class="loader__status" id="loaderStatus">Initialisation de l'usine…</div>
+    <button id="enterBtn" class="loader__enter" disabled>
+      <span data-en="Enter the factory">Entrer dans l'usine</span>
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- HUD (interface superposée) -->
+<div id="hud" class="hud" aria-hidden="true">
+  <div class="hud__top">
+    <div class="hud__id">
+      <span class="hud__name">EPHRAIM GOUSSANOU</span>
+      <span class="hud__role" data-en="Software &amp; Industrial Systems Engineer">Ingénieur Logiciels &amp; Systèmes Industriels</span>
+    </div>
+    <div class="hud__tools">
+      <div class="lang" aria-label="Langue / Language">
+        <button data-lang="fr" class="active">FR</button><span>/</span><button data-lang="en">EN</button>
+      </div>
+      <button id="soundBtn" class="hud__btn" title="Son d'ambiance" aria-pressed="false" data-en-title="Ambient sound">
+        <svg class="ic ic-off" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4zM17 9l4 6M21 9l-4 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="ic ic-on" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4zM16 8a5 5 0 0 1 0 8M18.5 5.5a9 9 0 0 1 0 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="hud__btn hud__btn--text" href="../index.html" data-en="Classic view">Vue classique</a>
+    </div>
+  </div>
+
+  <div class="hud__hint" id="hudHint">
+    <span data-en="Drag to look around · Scroll to zoom · Click a highlighted zone">Glissez pour explorer · Molette pour zoomer · Cliquez sur une zone</span>
+  </div>
+
+  <button id="resetBtn" class="hud__reset" hidden>
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4v6h6M20 20v-6h-6M20 9a8 8 0 0 0-14-3M4 15a8 8 0 0 0 14 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-en="Reset view">Vue d'ensemble</span>
+  </button>
+
+  <!-- Mini-carte des zones -->
+  <nav class="minimap" id="minimap" aria-label="Zones"></nav>
+</div>
+
+<!-- Panneau d'information (rempli dynamiquement) -->
+<aside id="panel" class="panel" aria-hidden="true">
+  <button class="panel__close" id="panelClose" aria-label="Fermer">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="panel__scroll" id="panelBody"></div>
+</aside>
+
+<!-- Point d'entrée applicatif -->
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
